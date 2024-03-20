@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: node-sercrt-if-gitops
+  description: This is GitOps manifest for node-sercrt-if   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: node-sercrt-if
+    janus-idp.io/tekton: node-sercrt-if 
+    backstage.io/kubernetes-id: node-sercrt-if 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:node-sercrt-if

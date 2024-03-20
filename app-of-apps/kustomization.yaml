@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: node-sercrt-if 
+  janus-idp.io/tekton: node-sercrt-if
+  backstage.io/kubernetes-id: node-sercrt-if
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: node-sercrt-if
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  
